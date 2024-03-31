@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Switcher</title>
+<style>
+
+.img-box{
+    height: 30px;
+    padding: 3px;
+    cursor: pointer;
+   
+}
+.active{
+    border: 1px solid rgb(156, 156, 156);
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+}
+.themedark{
+    background-color: black;
+    color: white;
+}
+.themelight{
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+.content{
+    font-size: 23px;
+    margin: 10px 30px;
+}
+</style>
+
+</head>
+<body id="bodybg">
+    <div>
+        <img src="moon.png" class="img-box" id="moon" onclick="dark()"/>
+        <img src="sunny.png" class="img-box" id="sun" onclick="light()"/>
+        <center><h1>
+            Theme Switcher
+        </h1></center>
+        <p class="content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+            Consectetur eveniet dolore vel nulla aliquam cupiditate 
+            tempora incidunt inventore et delectus facere aperiam minima
+             ipsam error odit, assumenda mollitia eligendi enim!
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Consectetur eveniet dolore vel nulla aliquam cupiditate tempora 
+            incidunt inventore et delectus facere aperiam minima ipsam error 
+            odit, assumenda mollitia eligendi enim!</p>
+
+    </div>
+<script>
+    function dark(){
+        const dark = document.getElementById('moon');
+        dark.classList.add('active');
+        const light = document.getElementById('sun');
+        light.classList.remove('active');
+        const bodyElement = document.getElementById('bodybg');
+        bodyElement.className = "themedark";
+    }
+    function light(){
+        const light = document.getElementById('sun');
+        light.classList.add('active');
+        const dark = document.getElementById('moon');
+        dark.classList.remove('active');
+        const bodyElement = document.getElementById('bodybg');
+        bodyElement.className = "themelight";
+    }
+</script>
+
+</body>
+</html>
